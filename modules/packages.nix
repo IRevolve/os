@@ -37,6 +37,10 @@
     pkgs.kitty
     pkgs.fastfetch
     pkgs.lutris
+
+    (pkgs.discord.override {
+      withOpenASAR = true;
+    })
   ];
 
 }
