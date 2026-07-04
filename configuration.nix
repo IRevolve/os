@@ -66,6 +66,7 @@
     neovim
     git
     ripgrep
+    kitty
   ];
 
   system.stateVersion = "26.05"; 
