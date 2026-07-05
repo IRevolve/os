@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
 
   users.users = {
-    revolve = {
+    ${username} = {
       isNormalUser = true;
       shell = pkgs.fish;
       extraGroups = [

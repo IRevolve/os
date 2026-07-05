@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Atreia system configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -15,16 +15,25 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  let 
+    username = "revolve";
+  in {
     nixosConfigurations.sanctum = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      
+      specialArgs = { 
+        inherit inputs;
+	inherit username;
+      };
+
       modules = [
         home-manager.nixosModules.home-manager
 
 	{
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+	  home-manager.extraSpecialArgs = { inherit username; };
 	}
 
         # DO NOT MODIFY
