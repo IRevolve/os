@@ -1,5 +1,7 @@
-{ pkgs, ... }: {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+{ self, inputs, ... }: {
+  flake.nixosModules.boot = { pkgs, ... }: {
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.kernelPackages = pkgs.linuxPackages_zen;
+  };
 }

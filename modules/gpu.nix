@@ -1,19 +1,19 @@
-{ ... }: {
+{ self, inputs, ... }: {
+  flake.nixosModules.gpu = { ... }: {
+    services.xserver.videoDrivers = [ "nvidia" ];
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+    hardware = {
+      graphics = {
+        enable = true;
+        enable32Bit = true;
+      };
 
-  hardware = {
-    graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = true;
+      nvidia = {
+        modesetting.enable = true;
+        powerManagement.enable = false;
+        powerManagement.finegrained = false;
+        open = true;
+      };
     };
   };
-
 }
