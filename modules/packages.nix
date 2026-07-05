@@ -36,7 +36,10 @@
     pkgs.ripgrep
     pkgs.kitty
     pkgs.fastfetch
-    pkgs.lutris
+    pkgs.xwayland-satellite
+    pkgs.pcsx2
+    pkgs.faugus-launcher
+    pkgs.wowup-cf
 
     (pkgs.discord.override {
       withOpenASAR = true;
