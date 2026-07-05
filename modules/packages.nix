@@ -36,6 +36,7 @@
     pkgs.ripgrep
     pkgs.kitty
     pkgs.fastfetch
+    pkgs.tree
     pkgs.xwayland-satellite
     pkgs.pcsx2
     pkgs.faugus-launcher
