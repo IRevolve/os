@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.packages = { pkgs, ... }: {
+  flake.nixosModules.packages = { pkgs, lib, ... }: {
     programs = {
       firefox = {
         enable = true;
@@ -20,7 +20,7 @@
       fish = {
         enable = true;
         shellAliases = {};
-        shellInit = "fastfetch";
+        shellInit = lib.getExe pkgs.fastfetch;
       };
 
       starship.enable = true;
@@ -35,7 +35,6 @@
       pkgs.neovim
       pkgs.ripgrep
       pkgs.kitty
-      pkgs.fastfetch
       pkgs.tree
       pkgs.xwayland-satellite
       pkgs.pcsx2
