@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.locale = { ... }: {
+  flake.nixosModules.locale = { pkgs, ... }: {
     time.timeZone = "Europe/Berlin";
 
     i18n.defaultLocale = "de_DE.UTF-8";
@@ -16,6 +16,7 @@
     };
 
     console.keyMap = "de-latin1-nodeadkeys";
+
     services.xserver.xkb = {
       layout = "de";
       variant = "nodeadkeys";
