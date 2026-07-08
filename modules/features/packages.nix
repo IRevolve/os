@@ -36,7 +36,6 @@
       pkgs.ripgrep
       pkgs.kitty
       pkgs.tree
-      pkgs.xwayland-satellite
       pkgs.pcsx2
       pkgs.faugus-launcher
       pkgs.wowup-cf
