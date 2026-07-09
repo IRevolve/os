@@ -11,9 +11,9 @@
         enable = true;
         config = {
           user.name = "Revolve";
-	  user.email = "revolve@atreia.io";
-	  init.defaultBranch = "main";
-	  pull.rebase = true;
+          user.email = "revolve@atreia.io";
+          init.defaultBranch = "main";
+          pull.rebase = true;
         };
       };
 

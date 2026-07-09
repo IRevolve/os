@@ -22,10 +22,10 @@
 
       {
         home-manager.useGlobalPkgs = true;
-	home-manager.useUserPackages = true;
+        home-manager.useUserPackages = true;
 
-	# DO NOT CHANGE
-	system.stateVersion = "26.05";
+        # DO NOT CHANGE
+        system.stateVersion = "26.05";
       }
     ];
   };

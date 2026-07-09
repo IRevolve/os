@@ -4,11 +4,13 @@
       inputs.qylock.nixosModules.default
     ];
 
-
     services.displayManager.sddm = {
       enable = true;
       wayland.enable = true;
     };
+
+    services.upower.enable = true;
+    services.tuned.enable = true;
 
     programs.qylock = {
       enable = true;
