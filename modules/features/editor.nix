@@ -1,16 +1,16 @@
 { self, inputs, ... }: {
   flake.nixosModules.editor = { pkgs, home-manager, ... }: {
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+
+    environment.systemPackages = [
+      pkgs.ripgrep
+      pkgs.fd
+    ];
+    
     home-manager.users.revolve = {
-      programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-
-        extraPackages = [
-          pkgs.ripgrep
-          pkgs.fd
-        ];
-      };
-
       xdg.configFile."nvim".source = ../../config/nvim;
     };
   };
