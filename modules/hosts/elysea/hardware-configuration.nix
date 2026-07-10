@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.sanctumHardware = { config, lib, modulesPath, ... }: {
+  flake.nixosModules.elyseaHardware = { config, lib, modulesPath, ... }: {
     imports = [ 
       (modulesPath + "/installer/scan/not-detected.nix")
     ];

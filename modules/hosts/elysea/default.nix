@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosConfigurations.sanctum = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.elysea = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
 
     specialArgs = {
@@ -8,7 +8,7 @@
 
     modules = [
       inputs.home-manager.nixosModules.home-manager
-      self.nixosModules.sanctumHardware
+      self.nixosModules.elyseaHardware
       self.nixosModules.boot
       self.nixosModules.bluetooth
       self.nixosModules.network
@@ -24,7 +24,7 @@
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-	home-manager.users.revolve.home.stateVersion = "26.05";
+        home-manager.users.revolve.home.stateVersion = "26.05";
 
         # DO NOT CHANGE
         system.stateVersion = "26.05";
