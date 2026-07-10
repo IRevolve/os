@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.network = { ... }: {
-    networking.hostName = "asmodae";
+    networking.hostName = "elysea";
     networking.networkmanager.enable = true;
   };
 }

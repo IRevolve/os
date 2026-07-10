@@ -10,8 +10,11 @@
       self.nixosModules.asmodaeHardware
       self.nixosModules.asmodaeConfig
       self.nixosModules.settings
+      self.nixosModules.jellyfin
 
       {
+        networking.hostName = "asmodae";
+
         # DO NOT CHANGE
         system.stateVersion = "26.06";
       }

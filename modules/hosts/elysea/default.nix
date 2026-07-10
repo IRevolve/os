@@ -26,6 +26,8 @@
         home-manager.useUserPackages = true;
         home-manager.users.revolve.home.stateVersion = "26.05";
 
+        networking.hostName = "elysea";
+
         # DO NOT CHANGE
         system.stateVersion = "26.05";
       }
