@@ -19,10 +19,12 @@
       self.nixosModules.gpu
       self.nixosModules.audio
       self.nixosModules.settings
+      self.nixosModules.editor
 
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+	home-manager.users.revolve.home.stateVersion = "26.05";
 
         # DO NOT CHANGE
         system.stateVersion = "26.05";

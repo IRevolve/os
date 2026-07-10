@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.packages = { pkgs, lib, ... }: {
+  flake.nixosModules.packages = { pkgs, lib, home-manager, ... }: {
     programs = {
       firefox = {
         enable = true;
@@ -32,8 +32,6 @@
     };
 
     environment.systemPackages = [
-      pkgs.neovim
-      pkgs.ripgrep
       pkgs.kitty
       pkgs.tree
       pkgs.pcsx2
