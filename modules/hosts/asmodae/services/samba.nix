@@ -1,24 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.asmodaeConfig = { pkgs, ... }: {
-    boot.supportedFilesystems = [ "zfs" ];
-
-    networking.hostId = "8425e349";
-
-    users.users = {
-      root = {
-        openssh.authorizedKeys.keys = [
-          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAd7kjEdXf/tomwYJcMIrtyP3qI8w1OyfaDtGZ+mg1aD revolve@atreia.io"
-        ];
-      };
-    };
-
-    environment.systemPackages = with pkgs; [
-      neovim
-      git
-    ];
-
-    services.openssh.enable = true;
-
+  flake.nixosModules.samba = { ... }: {
     services.samba = {
       enable = true;
       openFirewall = true;
@@ -45,6 +26,7 @@
       };
     };
 
+    # Discoverability
     services.avahi = {
       enable = true;
       nssmdns4 = true;
@@ -53,15 +35,6 @@
         addresses = true;
         domain = true;
       };
-    };
-
-    services.immich = {
-      enable = true;
-      mediaLocation = "/vault/photos";
-
-      database.enable = true;
-      redis.enable = true;
-      machine-learning.enable = true;
     };
   };
 }

@@ -1,7 +1,8 @@
 { self, inputs, ... }: {
   flake.nixosModules.boot = { pkgs, lib, config, ... }: {
     options.atreia.boot = {
-      zenKernel = lib.mkEnableOption "Use zen kernel";
+      zenKernel.enable = lib.mkEnableOption "Use zen kernel";
+      zfs.enable = lib.mkEnableOption "Use zfs";
     };
     
     config = {
@@ -17,12 +18,15 @@
         timeout = 3;
       };
 
-      boot.kernelPackages = lib.mkIf config.atreia.boot.zenKernel pkgs.linuxPackages_zen;
+      boot.kernelPackages = lib.mkIf config.atreia.boot.zenKernel.enable pkgs.linuxPackages_zen;
       boot.kernelParams = [
         "quiet"
         "splash"
         "fbcon=map:0" # Limit boot console only to primary display
       ];
+      
+      boot.supportedFilesystems = [ lib.mkIf config.atreia.zfs.enable "zfs" ];
+      networking.hostId = lib.mkIf config.atreia.zfs.enable "8425e349";
     };
   };
 }

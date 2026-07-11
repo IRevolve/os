@@ -20,13 +20,16 @@
       
       # System Modules
       self.nixosModules.jellyfin
+      self.nixosModules.samba
+      self.nixosModules.immich
 
-      # temp
-      self.nixosModules.asmodaeConfig
+      # ssh & co
+      self.nixosModules.server
 
       {
         atreia = {
-          boot.zenKernel = false;
+          boot.zenKernel.enable = false;
+          boot.zfs.enable = true;
           network.hostName = "asmodae";
         };
 

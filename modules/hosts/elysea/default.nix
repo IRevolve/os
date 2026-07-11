@@ -28,7 +28,8 @@
         home-manager.users.revolve.home.stateVersion = "26.05";
 
         atreia = {
-          boot.zenKernel = true;
+          boot.zenKernel.enable = true;
+          boot.zfs.enable = false;
           network.hostName = "elysea";
         };
 
