@@ -25,8 +25,8 @@
         "fbcon=map:0" # Limit boot console only to primary display
       ];
       
-      boot.supportedFilesystems = [ lib.mkIf config.atreia.zfs.enable "zfs" ];
-      networking.hostId = lib.mkIf config.atreia.zfs.enable "8425e349";
+      boot.supportedFilesystems = lib.mkIf config.atreia.boot.zfs.enable [ "zfs" ];
+      networking.hostId = lib.mkIf config.atreia.boot.zfs.enable "8425e349";
     };
   };
 }

@@ -25,6 +25,7 @@
 
       # ssh & co
       self.nixosModules.server
+      self.nixosModules.routing
 
       {
         atreia = {
