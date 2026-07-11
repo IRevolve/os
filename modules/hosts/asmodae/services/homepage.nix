@@ -3,7 +3,7 @@
     virtualisation.oci-containers.containers."homepage" = {
       image = "ghcr.io/gethomepage/homepage:latest";
       
-      ports = [ "3000:3000" ];
+      ports = [ "10000:3000" ];
 
       volumes = [
         "/vault/config/homepage:/app/config"
@@ -11,7 +11,7 @@
       ];
 
       environment = {
-        HOMEPAGE_ALLOWED_HOSTS = "10.0.0.2:3000";
+        HOMEPAGE_ALLOWED_HOSTS = "10.0.0.2:10000";
       };
     };
   };

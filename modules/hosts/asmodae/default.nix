@@ -18,17 +18,19 @@
       self.nixosModules.settings
       self.nixosModules.shell
       
-      # System Modules
-      self.nixosModules.jellyfin
+      # Features
+      self.nixosModules.ssh
+      self.nixosModules.podman
+      self.nixosModules.tunnel
+      self.nixosModules.database
       self.nixosModules.samba
-      self.nixosModules.immich
-      self.nixosModules.vaultwarden
+      
+      # Services
       self.nixosModules.homepage
-
-      # ssh & co
-      self.nixosModules.server
-      self.nixosModules.routing
-
+      self.nixosModules.nextcloud
+      self.nixosModules.vaultwarden
+      self.nixosModules.jellyfin
+ 
       {
         atreia = {
           boot.zenKernel.enable = false;
