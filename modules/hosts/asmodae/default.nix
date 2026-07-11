@@ -23,6 +23,7 @@
       self.nixosModules.samba
       self.nixosModules.immich
       self.nixosModules.vaultwarden
+      self.nixosModules.homepage
 
       # ssh & co
       self.nixosModules.server
