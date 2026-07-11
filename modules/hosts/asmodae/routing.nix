@@ -11,6 +11,7 @@
           ingress = {
             "photos.atreia.io" = "http://localhost:2283";
             "tv.atreia.io" = "http://localhost:8096";
+            "pass.atreia.io" = "http://localhost:8080";
           };
         };
       };

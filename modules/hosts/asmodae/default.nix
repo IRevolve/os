@@ -22,6 +22,7 @@
       self.nixosModules.jellyfin
       self.nixosModules.samba
       self.nixosModules.immich
+      self.nixosModules.vaultwarden
 
       # ssh & co
       self.nixosModules.server
@@ -35,7 +36,7 @@
         };
 
         # DO NOT CHANGE
-        system.stateVersion = "26.06";
+        system.stateVersion = "26.05";
       }
     ];
   };
