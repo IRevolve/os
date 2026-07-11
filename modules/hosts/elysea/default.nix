@@ -15,18 +15,22 @@
       self.nixosModules.desktop
       self.nixosModules.locale
       self.nixosModules.packages
-      self.nixosModules.user
+      self.nixosModules.revolve
       self.nixosModules.gpu
       self.nixosModules.audio
       self.nixosModules.settings
       self.nixosModules.editor
+      self.nixosModules.shell
 
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users.revolve.home.stateVersion = "26.05";
 
-        networking.hostName = "elysea";
+        atreia = {
+          boot.zenKernel = true;
+          network.hostName = "elysea";
+        };
 
         # DO NOT CHANGE
         system.stateVersion = "26.05";

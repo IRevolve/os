@@ -17,14 +17,6 @@
         };
       };
 
-      fish = {
-        enable = true;
-        shellAliases = {};
-        shellInit = lib.getExe pkgs.fastfetch;
-      };
-
-      starship.enable = true;
-
       steam = {
         enable = true;
         extraCompatPackages = [ pkgs.proton-ge-bin ];
