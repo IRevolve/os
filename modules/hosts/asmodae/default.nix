@@ -30,6 +30,7 @@
       self.nixosModules.nextcloud
       self.nixosModules.vaultwarden
       self.nixosModules.jellyfin
+      self.nixosModules.immich
  
       {
         atreia = {
