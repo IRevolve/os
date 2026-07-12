@@ -9,26 +9,8 @@
         "/vault/data:/var/www/html/data"
       ];
 
-      environment = {
-        POSTGRES_HOST = "127.0.0.1";
-        POSTGRES_DB = "nextcloud";
-        POSTGRES_USER = "";
-        POSTGRES_PASSWORD = "";
-      };
-
       extraOptions = [
-        "--network=host"
         "--device=/dev/dri:/dev/dri"
-      ];
-    };
-
-    services.postgresql = {
-      ensureDatabases = [ "nextcloud" ];
-      ensureUsers = [
-        {
-          name = "nextcloud";
-          ensureDBOwnership = true;
-        }
       ];
     };
 
